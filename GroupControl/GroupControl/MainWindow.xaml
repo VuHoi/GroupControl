@@ -5,8 +5,79 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GroupControl"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
         
+        xmlns:ViewModel="clr-namespace:GroupControl.ViewModel"
+        Title="MainWindow" Height="350" Width="525">
+
+    <Window.Resources>
+        <ViewModel:DayHandel x:Key="key"></ViewModel:DayHandel>
+
+    </Window.Resources>
+    <Grid VerticalAlignment="Stretch" DataContext="{StaticResource key}">
+        <local:CalendarCustom    RenderTransformOrigin="0.5,0.5"  x:Name="cldCustom" Command="{Binding TestCommand}" CommandParameter="{Binding ElementName=cldCustom}" 
+                             getDayTime="2017/3/10" >
+            <local:CalendarCustom.Style>
+                <Style>
+                    <Style.Triggers>
+                        <MultiDataTrigger >
+                            <MultiDataTrigger.Conditions>
+                                <Condition  Binding="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=IsVisible}" 
+                         Value="True"></Condition>
+
+                                <Condition  Binding="{Binding Hidden, UpdateSourceTrigger=PropertyChanged}" 
+                         Value="False"></Condition>
+                            </MultiDataTrigger.Conditions>
+                            <MultiDataTrigger.EnterActions>
+
+                                <BeginStoryboard>
+                                    <Storyboard >
+                                        <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                             From="0.1" To="1"
+                                             Duration="0:0:0.500"
+                                              />
+                                        <!--<DoubleAnimation  Duration="00:00:0.500" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(RotateTransform.Angle)" From="0" To="720"></DoubleAnimation>-->
+                                        <DoubleAnimation  Duration="00:00:0.500" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" From="0.0" To="1"></DoubleAnimation>
+                                        <DoubleAnimation  Duration="00:00:0.500" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" From="0.0" To="1"></DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+
+                            </MultiDataTrigger.EnterActions>
+                            <MultiDataTrigger.ExitActions>
+
+                                <BeginStoryboard>
+                                    <Storyboard >
+                                        <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                             From="1" To="0"
+                                             Duration="0:0:0.500"
+                                              />
+                                        <DoubleAnimation  Duration="00:00:0.500" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" From="1" To="0"></DoubleAnimation>
+                                        <DoubleAnimation  Duration="00:00:0.500" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" From="1" To="0"></DoubleAnimation>
+                                        <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"  >
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>-->
+
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </MultiDataTrigger.ExitActions>
+
+                        </MultiDataTrigger>
+
+
+
+                    </Style.Triggers>
+                </Style>
+            </local:CalendarCustom.Style>
+            <local:CalendarCustom.RenderTransform>
+
+                <TransformGroup>
+                    <ScaleTransform></ScaleTransform>
+                    <RotateTransform></RotateTransform>
+                </TransformGroup>
+
+
+            </local:CalendarCustom.RenderTransform>
+        </local:CalendarCustom>
+        <Button Command="{Binding HiddenCommand}" CommandParameter="{Binding ElementName=cldCustom}" Content="hoi" VerticalAlignment="Bottom" HorizontalAlignment="Left"></Button>
     </Grid>
+
 </Window>
