@@ -13,10 +13,10 @@ namespace GroupControl
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class GroupControlDBEntities : DbContext
+    public partial class GroupControlDBEntities1 : DbContext
     {
-        public GroupControlDBEntities()
-            : base("name=GroupControlDBEntities")
+        public GroupControlDBEntities1()
+            : base("name=GroupControlDBEntities1")
         {
         }
     
@@ -28,6 +28,5 @@ namespace GroupControl
         public virtual DbSet<Announcement> Announcements { get; set; }
         public virtual DbSet<Schedule> Schedules { get; set; }
         public virtual DbSet<Task> Tasks { get; set; }
-        public virtual DbSet<User> Users { get; set; }
     }
 }

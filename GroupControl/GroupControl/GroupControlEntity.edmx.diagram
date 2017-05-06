@@ -4,11 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="cda834143ee1495e9fb192dc1faac1af" Name="Diagram1">
+      <Diagram DiagramId="6f36831f993147809f6550979a48ea82" Name="Diagram1">
         <EntityTypeShape EntityType="GroupControlDBModel.Announcement" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="GroupControlDBModel.Schedule" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="GroupControlDBModel.Task" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="GroupControlDBModel.User" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="GroupControlDBModel.Schedule" Width="1.5" PointX="7.75" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GroupControlDBModel.Task" Width="1.5" PointX="4" PointY="3.625" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
