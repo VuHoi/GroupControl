@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MahApps.Metro.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,7 @@ namespace GroupControl.View
     /// <summary>
     /// Interaction logic for EventDayVIew.xaml
     /// </summary>
-    public partial class EventDayVIew : Window
+    public partial class EventDayVIew : MetroWindow
     {
         public EventDayVIew()
         {

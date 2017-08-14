@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupControl", "GroupControl\GroupControl.csproj", "{ACA69143-A3BB-4D3A-8754-5EFEE3D25993}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "project test", "project test\project test.csproj", "{07919D01-5861-4A98-8054-CAEB9506F18E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{ACA69143-A3BB-4D3A-8754-5EFEE3D25993}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACA69143-A3BB-4D3A-8754-5EFEE3D25993}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACA69143-A3BB-4D3A-8754-5EFEE3D25993}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07919D01-5861-4A98-8054-CAEB9506F18E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07919D01-5861-4A98-8054-CAEB9506F18E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07919D01-5861-4A98-8054-CAEB9506F18E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07919D01-5861-4A98-8054-CAEB9506F18E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
