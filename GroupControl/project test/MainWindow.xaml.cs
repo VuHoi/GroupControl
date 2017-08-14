@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GroupControl
+namespace project_test
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,7 +23,9 @@ namespace GroupControl
     {
         public MainWindow()
         {
-            InitializeComponent();
+            
+
         }
+
     }
 }

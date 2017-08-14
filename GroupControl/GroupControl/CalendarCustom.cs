@@ -178,53 +178,12 @@ namespace GroupControl
 
                     }
                 }
-
-
             }
 
             private void Day_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
             {
-                Point relativePoint = ((TextBlock)sender).TransformToAncestor(this).Transform(new Point(0, 0));
-
-               EventDayVIew ab = new EventDayVIew(); if (relativePoint.X > 750) ab.Left = relativePoint.X - 410;
-                else ab.Left = relativePoint.X + 205;
-                ab.Top = relativePoint.Y;
-                ab.Height = 400;
-                ab.Width = 470;
-
-                ab.ShowDialog();
-
-
-                TextBlock Event = new TextBlock() { Background = new SolidColorBrush(Colors.WhiteSmoke) };
-                Event.Text = "vu khac hoi";
-                Event.Height = 30;
-                Event.RenderTransform = new ScaleTransform();
-                Event.RenderTransformOrigin = new Point(0.5, 0.5);
-                Event.SetResourceReference(Control.StyleProperty, "triggerTextbox");
-                Event.Margin = new Thickness(0, 10, 0, 0);
-                Panel.SetZIndex(Event, Panel.GetZIndex((TextBlock)sender) - 1);
-                Grid.SetRow(Event, Grid.GetRow((TextBlock)sender));
-                Grid.SetColumn(Event, Grid.GetColumn((TextBlock)sender));
-                int isIndex = 0; int k = 0;
-                for (isIndex = 10; isIndex > 0; isIndex--)
-                {
-                    try
-                    {
-                        if (Grid.GetColumn(grd.Children[grd.Children.IndexOf((TextBlock)sender) + isIndex]) == Grid.GetColumn((TextBlock)sender) && Grid.GetRow(grd.Children[grd.Children.IndexOf((TextBlock)sender) + isIndex]) == Grid.GetRow((TextBlock)sender))
-                        {
-                            k = 1;
-                            break;
-                        }
-                    }
-                    catch { }
-                }
-                if (k != 0)
-                {
-                    Event.Margin = new Thickness(0, (grd.Children[grd.Children.IndexOf((TextBlock)sender) + isIndex] as TextBlock).Margin.Top + 50, 0, 0);
-                    grd.Children.Insert(grd.Children.IndexOf((TextBlock)sender) + isIndex + 1, Event); return;
-                }
-                grd.Children.Insert(grd.Children.IndexOf((TextBlock)sender) + 1, Event);
-                try
+          
+            try
                 {
                     if (String.Format("{0:d/M/yyyy}", new DateTime(_Year, _Month, Int32.Parse(((TextBlock)sender).Text))) != String.Format("{0:d/M/yyyy}", DateTime.Now)) ((TextBlock)sender).Background = new SolidColorBrush(Colors.Red);
                 }
@@ -256,34 +215,76 @@ namespace GroupControl
                     else getDayTime = DateTime.Now;
                 }
 
-                if (((TextBlock)sender).Foreground.ToString() == (new SolidColorBrush(Colors.Bisque)).ToString())
+            if (((TextBlock)sender).Foreground.ToString() == (new SolidColorBrush(Colors.Bisque)).ToString())
+            {
+                if (Int32.Parse(((TextBlock)sender).Text) < 10)
                 {
-                    if (Int32.Parse(((TextBlock)sender).Text) < 10)
+                    if (_Month < 12)
                     {
-                        if (_Month < 12)
-                        {
-                            getDayTime = new DateTime(_Year, _Month + 1, Int32.Parse(((TextBlock)sender).Text));
+                        getDayTime = new DateTime(_Year, _Month + 1, Int32.Parse(((TextBlock)sender).Text));
 
-                            BtnNext_Click(null, null);
+                        BtnNext_Click(null, null);
 
-                        }
                     }
-                    else
-                    {
-                        if (_Month > 1)
-                        {
-                            getDayTime = new DateTime(_Year, _Month - 1, Int32.Parse(((TextBlock)sender).Text));
-
-                            BtnPre_Click(null, null);
-
-                        }
-                    }
-
-
-
-
-
                 }
+                else
+                {
+                    if (_Month > 1)
+                    {
+                        getDayTime = new DateTime(_Year, _Month - 1, Int32.Parse(((TextBlock)sender).Text));
+
+                        BtnPre_Click(null, null);
+
+                    }
+                }
+            }
+                Point relativePoint = ((TextBlock)sender).TransformToAncestor(this).Transform(new Point(0, 0));
+
+                EventDayVIew ab = new EventDayVIew(); if (relativePoint.X > 750) ab.Left = relativePoint.X - 410;
+                else ab.Left = relativePoint.X + 205;
+                ab.Top = relativePoint.Y;
+                ab.Height = 400;
+                ab.Width = 490;
+
+                ab.ShowDialog();
+            
+                TextBlock Event = new TextBlock() { Background = new SolidColorBrush(Colors.WhiteSmoke) };
+                Event.Text = "vu khac hoi";
+            
+                Event.Height = 30;
+                Event.RenderTransform = new ScaleTransform();
+                Event.RenderTransformOrigin = new Point(0.5, 0.5);
+                Event.SetResourceReference(Control.StyleProperty, "triggerTextbox");
+                Event.Margin = new Thickness(0, 10, 0, 0);
+                Panel.SetZIndex(Event, Panel.GetZIndex((TextBlock)sender) - 1);
+                Grid.SetRow(Event, Grid.GetRow((TextBlock)sender));
+                Grid.SetColumn(Event, Grid.GetColumn((TextBlock)sender));
+            MessageBox.Show(Grid.GetRow(Event).ToString());
+
+
+
+            int isIndex = 0; int k = 0;
+                for (isIndex = 10; isIndex > 0; isIndex--)
+                {
+                    try
+                    {
+                        if (Grid.GetColumn(grd.Children[grd.Children.IndexOf((TextBlock)sender) + isIndex]) == Grid.GetColumn((TextBlock)sender) && Grid.GetRow(grd.Children[grd.Children.IndexOf((TextBlock)sender) + isIndex]) == Grid.GetRow((TextBlock)sender))
+                        {
+                            k = 1;
+                            break;
+                        }
+                    }
+                    catch { }
+                }
+
+                if (k != 0)
+                {
+                    Event.Margin = new Thickness(0, (grd.Children[grd.Children.IndexOf((TextBlock)sender) + isIndex] as TextBlock).Margin.Top + 50, 0, 0);
+                    grd.Children.Insert(grd.Children.IndexOf((TextBlock)sender) + isIndex + 1, Event); return;
+                }
+                grd.Children.Insert(grd.Children.IndexOf((TextBlock)sender) + 1, Event);
+
+            
 
 
                 // add even ClickDay

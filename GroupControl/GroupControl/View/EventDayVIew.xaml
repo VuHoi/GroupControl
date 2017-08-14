@@ -1,19 +1,22 @@
-﻿<Window x:Class="GroupControl.View.EventDayVIew"
+﻿<metro:MetroWindow x:Class="GroupControl.View.EventDayVIew"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GroupControl.View"
         mc:Ignorable="d"
-        Width="300"
-           xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
+        Width="513.464"
+        GlowBrush="{DynamicResource AccentColorBrush}"     
+        NonActiveBorderBrush="Black"      
+        xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
        Background="GhostWhite"
         ResizeMode="NoResize"
        xmlns:ViewModel="clr-namespace:GroupControl.ViewModel"
-             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" d:DesignWidth="300" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
         Name="wdEvent"
          Height="377"
-         Title="{Binding ChooseDay}">
+        
+         Title="Event - Calendar">
 
     <Window.Resources>
         <ViewModel:DayHandel x:Key="key1"></ViewModel:DayHandel>
@@ -21,12 +24,8 @@
     <Window.DataContext>
         <ViewModel:DayHandel ></ViewModel:DayHandel>
     </Window.DataContext>
-    <GroupBox >
-        <GroupBox.HeaderTemplate>
-            <DataTemplate>
-                <TextBlock Text="Create event for day" FontFamily="consolas" FontSize="20" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-            </DataTemplate>
-        </GroupBox.HeaderTemplate>
+    <GroupBox metro:GroupBoxHelper.HeaderForeground="Aqua" Header="Home">
+        
         <Grid DataContext="{StaticResource key1}">
             <Grid.Resources>
 
@@ -339,35 +338,35 @@
                                             </i:Interaction.Triggers>
                                             <ComboBoxItem>
                                                 <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
-                                                    <Image Height="40" Width="40" HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,/Resources/next.png">
+                                                    <Image Height="40" Width="40" HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,/Resources/Le luoi.png">
 
                                                     </Image>
                                                 </Grid>
                                             </ComboBoxItem>
                                             <ComboBoxItem>
                                                 <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
-                                                    <Image Height="40" Width="40" HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,/Resources/next.png">
+                                                    <Image Height="40" Width="40" HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,/Resources/Ngau.png">
 
                                                     </Image>
                                                 </Grid>
                                             </ComboBoxItem>
                                             <ComboBoxItem>
                                                 <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
-                                                    <Image Height="40" Width="40" HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,/Resources/next.png">
+                                                    <Image Height="40" Width="40" HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,/Resources/HI.png">
 
                                                     </Image>
                                                 </Grid>
                                             </ComboBoxItem>
                                             <ComboBoxItem>
                                                 <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
-                                                    <Image Height="40" Width="40" HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,/Resources/next.png">
+                                                    <Image Height="40" Width="40" HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,/Resources/gift.png">
 
                                                     </Image>
                                                 </Grid>
                                             </ComboBoxItem>
                                             <ComboBoxItem>
                                                 <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
-                                                    <Image Height="40" Width="40" HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,/Resources/next.png">
+                                                    <Image Height="40" Width="40" HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,/Resources/Smile.png">
 
                                                     </Image>
 
@@ -375,7 +374,7 @@
                                             </ComboBoxItem>
                                             <ComboBoxItem>
                                                 <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
-                                                    <Image Height="40" Width="40" HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,/Resources/next.png">
+                                                    <Image Height="40" Width="40" HorizontalAlignment="Left" VerticalAlignment="Top" Source="pack://siteoforigin:,,,/Resources/Graduation.png">
 
                                                     </Image>
                                                 </Grid>
@@ -405,12 +404,12 @@
                                                     </BeginStoryboard>
                                                 </EventTrigger>
                                             </ComboBox.Triggers>
-                                            <ComboBoxItem>item1</ComboBoxItem>
-                                            <ComboBoxItem>item1</ComboBoxItem>
-                                            <ComboBoxItem>item1</ComboBoxItem>
-                                            <ComboBoxItem>item1</ComboBoxItem>
-                                            <ComboBoxItem>item1</ComboBoxItem>
-                                            <ComboBoxItem>item1</ComboBoxItem>
+                                            <ComboBoxItem>15520269@gmail.com</ComboBoxItem>
+                                            <ComboBoxItem>15520269@gmail.com</ComboBoxItem>
+                                            <ComboBoxItem>15520269@gmail.com</ComboBoxItem>
+                                            <ComboBoxItem>15520269@gmail.com</ComboBoxItem>
+                                            <ComboBoxItem>15520269@gmail.com</ComboBoxItem>
+                                            <ComboBoxItem>15520269@gmail.com</ComboBoxItem>
 
                                         </ComboBox>
                                     </Grid>
@@ -440,24 +439,33 @@
             </Grid.RowDefinitions>
 
             <WrapPanel Background="Bisque"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" >
-                <Button Margin="2,0,0,0" Height="40"  >
+                <Button Name="btnSaveAndClose" Margin="2,0,0,0" Height="40"  >
                     <StackPanel  Orientation="Horizontal">
                         <Image  Source="../Resources/favicon.ico"></Image>
                         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Padding="5,0,5,5" Text="Save and Close"></TextBlock>
                     </StackPanel>
                 </Button>
-                <Button Margin="2,0,0,0" Height="40"  >
+                <Button Name="btnDelete" Margin="2,0,0,0" Height="40"  >
                     <StackPanel Orientation="Horizontal">
                         <Image Source="../Resources/icon_close.png" ></Image>
                         <TextBlock Text="Delete" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="5,0,5,5"></TextBlock>
                     </StackPanel>
                 </Button>
-                <StackPanel Margin="46,0,0,0" Orientation="Horizontal">
+                <StackPanel  Orientation="Horizontal">
                     <TextBlock  TextAlignment="Center"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,0,10,0" Text="Reminder : " ></TextBlock>
-                    <ComboBox Height="40"   MinWidth="100"></ComboBox>
+                    <ComboBox Name="cmbReminder" Height="40"   MinWidth="100">
+                        <ComboBoxItem>5 minute</ComboBoxItem>
+                        <ComboBoxItem>10minute</ComboBoxItem>
+                        <ComboBoxItem>15minute</ComboBoxItem>
+                        <ComboBoxItem>1 hour</ComboBoxItem>
+                        <ComboBoxItem>2 hour</ComboBoxItem>
+                        <ComboBoxItem>3 hour</ComboBoxItem>
+                    </ComboBox>
                 </StackPanel>
-                <Button   >
-                    <Button.Style>
+                <Button Name="btnRepeat" Margin="3,0,0,0" Width="40">
+                    <Image Source="../Resources/repeat.png">
+                    </Image>
+                    <!--<Button.Style>
                         <Style TargetType="Button">
                             <Style.Triggers>
                                 <MultiDataTrigger>
@@ -470,26 +478,123 @@
                                 </MultiDataTrigger>
                             </Style.Triggers>
                         </Style>
-                    </Button.Style>
+                    </Button.Style>-->
                 </Button>
             </WrapPanel>
-
+            <ScrollViewer Grid.Row="1"  Grid.Column="1">
             <StackPanel Grid.Row="1"  Grid.Column="1" >
-                <TextBlock Foreground="Gray" Text="Detail : " Padding="10"  FontFamily="consolas" FontSize="20" FontWeight="Bold" ></TextBlock>
-                <TextBox Name="txt" Padding="5"    TextWrapping="Wrap"  FontSize="20"   MinWidth="200" HorizontalAlignment="Stretch" VerticalAlignment="Top" Style="{StaticResource txtTextBox}">
+                    <TextBlock Height="45" Foreground="Gray" Text="Detail : " Padding="10"  FontFamily="consolas" FontSize="20" FontWeight="Bold" ></TextBlock>
+                <TextBox  Name="txtHeader" Padding="5"    TextWrapping="Wrap"  FontSize="20"   MinWidth="200" HorizontalAlignment="Stretch" VerticalAlignment="Top" Style="{StaticResource txtTextBox}">
                 </TextBox>
-                <TextBox Height="35" Margin="0,15,0,15">
+                <TextBox Name="txtContent" Height="35" Margin="0,15,0,10">
                     <metro:TextBoxHelper.Watermark>Location
                     </metro:TextBoxHelper.Watermark>
                 </TextBox>
                 <StackPanel Orientation="Horizontal">
-                    <ComboBox   Height="35" metro:TextBoxHelper.Watermark="{Binding ChooseDay}" >
-
+                    <ComboBox Height="40" Width="100"
+                          Margin="0 10 0 0"
+                          metro:TextBoxHelper.ClearTextButton="True"
+                          metro:TextBoxHelper.UseFloatingWatermark="False"
+                              metro:TextBoxHelper.Watermark="Start"
+                          IsEditable="True"
+                          SelectedIndex="0">
+                        <ComboBox.ContextMenu>
+                            <ContextMenu IsEnabled="False" Visibility="Collapsed" />
+                        </ComboBox.ContextMenu>
+                        <ComboBoxItem Content="0 P.M" />
+                        <ComboBoxItem Content="1 A.M" />
+                        <ComboBoxItem Content="2 A.M" />
+                        <ComboBoxItem Content="3 A.M" />
+                        <ComboBoxItem Content="4 A.M" />
+                        <ComboBoxItem Content="5 A.M" />
+                        <ComboBoxItem Content="6 A.M" />
+                        <ComboBoxItem Content="7 A.M" />
+                        <ComboBoxItem Content="8 A.M" />
+                        <ComboBoxItem Content="9 A.M" />
+                        <ComboBoxItem Content="10 A.M" />
+                        <ComboBoxItem Content="11 A.M" />
+                        <ComboBoxItem Content="12 A.M" />
+                        <ComboBoxItem Content="1 P.M" />
+                        <ComboBoxItem Content="2 P.M" />
+                        <ComboBoxItem Content="3 P.M" />
+                        <ComboBoxItem Content="4 P.M" />
+                        <ComboBoxItem Content="5 P.M" />
+                        <ComboBoxItem Content="6 P.M" />
+                        <ComboBoxItem Content="7 P.M" />
+                        <ComboBoxItem Content="8 P.M" />
+                        <ComboBoxItem Content="9 P.M" />
+                        <ComboBoxItem Content="10 P.M" />
+                        <ComboBoxItem Content="11 P.M" />
+                    </ComboBox>
+                    <ComboBox Height="40" Width="100"
+                          Margin="5 10 0 0"
+                          metro:TextBoxHelper.ClearTextButton="True"
+                         metro:TextBoxHelper.UseFloatingWatermark="False"
+                              metro:TextBoxHelper.Watermark="Finish"
+                          IsEditable="True"
+                          SelectedIndex="0">
+                        <ComboBox.ContextMenu>
+                            <ContextMenu IsEnabled="False" Visibility="Collapsed" />
+                        </ComboBox.ContextMenu>
+                        <ComboBoxItem Content="0 P.M" />
+                        <ComboBoxItem Content="1 A.M" />
+                        <ComboBoxItem Content="2 A.M" />
+                        <ComboBoxItem Content="3 A.M" />
+                        <ComboBoxItem Content="4 A.M" />
+                        <ComboBoxItem Content="5 A.M" />
+                        <ComboBoxItem Content="6 A.M" />
+                        <ComboBoxItem Content="7 A.M" />
+                        <ComboBoxItem Content="8 A.M" />
+                        <ComboBoxItem Content="9 A.M" />
+                        <ComboBoxItem Content="10 A.M" />
+                        <ComboBoxItem Content="11 A.M" />
+                        <ComboBoxItem Content="12 A.M" />
+                        <ComboBoxItem Content="1 P.M" />
+                        <ComboBoxItem Content="2 P.M" />
+                        <ComboBoxItem Content="3 P.M" />
+                        <ComboBoxItem Content="4 P.M" />
+                        <ComboBoxItem Content="5 P.M" />
+                        <ComboBoxItem Content="6 P.M" />
+                        <ComboBoxItem Content="7 P.M" />
+                        <ComboBoxItem Content="8 P.M" />
+                        <ComboBoxItem Content="9 P.M" />
+                        <ComboBoxItem Content="10 P.M" />
+                        <ComboBoxItem Content="11 P.M" />
                     </ComboBox>
                     <CheckBox Margin="5,0,0,0" Content="Allday"></CheckBox>
                 </StackPanel>
-            </StackPanel>
 
+                <TextBox  Height="65" Margin="0 5 0 0" metro:TextBoxHelper.Watermark="Event discription" TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
+            </StackPanel>
+            </ScrollViewer>
+            <StackPanel Grid.Column="2" Grid.Row="1">
+                <GroupBox Name="grbRepeat" Margin="3,45,0,0" Header="Repeat" >
+                    <StackPanel>
+                        <DatePicker metro:TextBoxHelper.Watermark="Start"></DatePicker>
+                        <ComboBox Margin="0,10,0,0" metro:TextBoxHelper.Watermark="Repeat"></ComboBox>
+                        <Grid Height="120" Margin="0 10 0 0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <CheckBox Padding="5" Content="Mon" Grid.Column="0" Grid.Row="0"></CheckBox>
+                            <CheckBox Padding="5" Content="Tue" Grid.Column="1" Grid.Row="0"></CheckBox>
+                            <CheckBox Padding="5" Content="Wed" Grid.Column="0" Grid.Row="1"></CheckBox>
+                            <CheckBox Padding="5" Content="Thu" Grid.Column="1" Grid.Row="1"></CheckBox>
+                            <CheckBox Padding="5" Content="Fri" Grid.Column="0" Grid.Row="2"></CheckBox>
+                            <CheckBox Padding="5" Content="Sat" Grid.Column="1" Grid.Row="2"></CheckBox>
+                            <CheckBox Padding="5" Content="Sun" Grid.Column="1" Grid.Row="3"></CheckBox>
+
+                        </Grid>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
         </Grid>
     </GroupBox>
-</Window>
+</metro:MetroWindow>

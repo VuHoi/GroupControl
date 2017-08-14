@@ -94,7 +94,7 @@
                                         </DataTemplate>
                                     </Button.ContentTemplate>
                                 </Button>
-                                <TextBlock Width="250" TextAlignment="Center" x:Name="txtMonth" Padding="10" Text="Month" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="Blue"></TextBlock>
+                                <TextBlock Width="250" TextAlignment="Center" x:Name="txtMonth" Padding="10" Text="Month" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="Black"></TextBlock>
                                 <Button x:Name="btnNext"  Height="50" Width="50" >
                                     <Button.ContentTemplate>
                                         <DataTemplate>
